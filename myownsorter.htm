@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Algorithm Training</h1>
+    <h1>  Sort a string array </h1>
+
+    <script type='text/javascript'>
+        const firstArray = [1,29,2,4,3,433,5,6,73,81,9,65,7,15,18];
+        const secondArray = ['Bracket', 'Ajewilo', 'tobiloba','Ajilolo','Emmanuella', 'Asikawi', 'Bridget', 'Chibeze', 'Henke','alabuku', 'esechie', 'oworonshoki'];
+       
+        function sort_function(a,b){
+         const stringA = a.toLowerCase();
+          const stringB = b.toLowerCase();
+          let codeA = stringA.charCodeAt(0)
+          let codeB = stringB.charCodeAt(0)
+          if(codeA>codeB) return 1
+          if(codeA<codeB) return -1
+          if(codeA==codeB){
+             let i=1;
+              while(stringA.charCodeAt(i) == stringB.charCodeAt(i)){
+                  i++
+              }
+             if(stringA.charCodeAt(i) > stringB.charCodeAt(i)) return 1;
+             if(stringA.charCodeAt(i) < stringB.charCodeAt(i)) return -1;   
+          };
+        }
+        secondArray.sort(sort_function)
+        console.log(secondArray)
+     </script>  
+          
+</body>
+</html>

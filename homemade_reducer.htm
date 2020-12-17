@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,html{
+            padding:0;
+            margin:0;
+            height:100%;
+        }
+        body{
+            min-height:100%;
+            display: grid;
+            align-items: start;
+        }
+        body > * {
+            border: 2px solid red;
+        }
+        span.display{
+            justify-self: center;
+            font-size: 50px;
+            border:5px solid rgba(247, 231, 231, 0.493);
+            background-color: rgb(239, 236, 243);
+            font-weight: 900;
+            padding:20px;
+            box-shadow:5px 2px 2px rgb(129, 123, 123)
+        }
+    </style>
+</head>
+<body>
+    <h1> Algorithm Training</h1>
+    <h1>  Home made reducer </h1>
+    <span class='display'></span>
+
+
+
+    <script type='text/javascript'>
+        const myArray = [4,2,3,9,23,97]
+
+Array.prototype.sum = function (){
+    let sum = 0;
+            for(let i=0; i < this.length ; i++){
+                sum = sum + this[i]   
+            }
+            return sum;
+        }
+       document.querySelector('span.display').innerText = myArray.sum()
+        </script>        
+</body>
+</html>

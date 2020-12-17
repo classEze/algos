@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Algorithm Training</h1>
+    <h1>  Combine Elements from two different arrays </h1>
+
+
+
+    <script type='text/javascript'>
+        const myArray = [];
+        myArray[0]= ['Umuahia','Yola','Uyo','Yenagoa','Bauchi', 'Asaba', 'Benin'];
+        myArray[1]= ['Abia', 'Adamawa', 'Akwa Ibom', 'Bayelsa', 'Bauchi','Delta', 'Edo'];
+
+       (function producer(){
+           let string;
+           const firstArray=myArray[0]
+           const secondArray=myArray[1]
+           for(let i = 0; i<secondArray.length; i++){
+               string=`${secondArray[i]} ${firstArray[i]}`
+               console.log(string)
+           }  
+       })()
+        </script>
+          
+</body>
+</html>

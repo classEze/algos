@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Algorithm Training</h1>
+    <h1>  Add element to certain positions </h1>
+
+
+
+    <script type='text/javascript'>
+    function is_Palindrome(word){
+       const wordArray = word.split('');
+       const toReverse = [...wordArray]
+       toReverse.reverse();
+       const ltr = wordArray.toString();
+       const rtl = toReverse.toString();
+       rtl == ltr ? alert('Yes') : alert('No')
+       return "done"
+    }
+
+    function create_Array(stringToUse){
+        let word = stringToUse
+        let i = 0
+        const formedArray = []
+        while(i < word.length) {
+            formedArray.push(word.substring(i,i+1))
+            i++
+        } 
+        return formedArray;
+    }
+        </script>
+          
+</body>
+</html>

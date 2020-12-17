@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./converter_styles.css">
+    <title>Converter</title>
+    
+</head>
+<body>
+    <form>
+        <h1>  Base Converter </h1>
+        <input type="text" required name='number' placeholder='Number'>
+        <input type="text" required name='base' placeholder='Base'>
+        <button type="submit"> Convert </button>
+        <input type="text" name="answer" id="answer" disabled>
+    </form>
+    <script type='text/javascript'>
+
+class Stack{
+    constructor(){
+        this.items = {};
+        this.count = 0;
+    }
+    add(item){
+        this.items[this.count] = item
+        this.count++
+        return ` Added ${item}`
+    }
+
+    remove(){
+       if( this.is_Empty() ) return undefined;
+       const value = this.items[this.count-1]
+        delete this.items[this.count-1]
+        this.count--
+        return value;
+    }
+
+    is_Empty(){
+        return this.count == 0
+    }
+    size(){
+        return this.count;
+    }
+    wipe(){
+        if(this.is_Empty()) return undefined
+       this.items = {};
+       this.count = 0;
+       return 'done'
+    }
+
+    to_String(){
+        let stringRepresentation = ""
+        while(!this.is_Empty()){
+         stringRepresentation += `${this.items[this.count-1]},`
+         this.count--
+        }
+        return stringRepresentation;
+    }
+    to_Special_String(){
+        let stringArray = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        let stringRepresentation = ""
+        while(!this.is_Empty()){
+           const index = this.items[this.count-1]
+         stringRepresentation += stringArray[index]
+         this.count--
+        }
+        return stringRepresentation;
+    }
+    }
+
+function convert( number, base){
+    const stackOne= new Stack();
+    let remainder;
+    while(number > 0){
+   remainder = number % base
+   stackOne.add(remainder)
+   number = Math.floor(number / base)
+    }
+    return stackOne.to_Special_String()
+}
+
+document.querySelector('button[type="submit"]').addEventListener('click', calculate)
+function calculate(e){
+    document.querySelector('input[name="answer"]').value = ''
+    const number = document.querySelector('input[name="number"]').value
+    const base = document.querySelector('input[name="base"]').value
+    if(number && base){
+        document.querySelector('input[name="answer"]').value = convert(number, base )
+        e.preventDefault();
+        return;
+    }
+}
+
+
+
+    </script>        
+</body>
+</html>

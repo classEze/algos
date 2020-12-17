@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Algorithm Training</h1>
+    <h1>  Cycle through a multidimensional array </h1>
+
+
+
+    <script type='text/javascript'>
+        const myArray = [];
+        myArray[0]= [1,2,3,4,5,6,6,7,8,9];
+        myArray[1]= ['a','b','c','d','e', 'f', 'g'];
+        myArray[2]= ['abia', 'Adamawa', 'Akwa Ibom', 'Bayelsa', 'Bauchi','Delta'];
+
+       function cycler(cArray){
+           for(let i=0; i<cArray.length; i++){
+               for(let j=0; j<cArray[i].length; j++)
+               console.log(cArray[i][j])
+           }
+       }
+       cycler(myArray)
+
+        </script>
+          
+</body>
+</html>

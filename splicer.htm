@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Algorithm Training</h1>
+    <h1>  Remove elements from certain positions </h1>
+
+
+
+    <script type='text/javascript'>
+        const myArray = [1,2,3,4,5,6,7,8,9]
+
+Array.prototype.cut = function ( start, count ){
+            for(let i=start; i < start+count ; i++){
+                this[i] = null
+            }
+            return this.remove_null();
+        }
+
+        
+Array.prototype.remove_null = function(){
+    const newArray = [];
+    for(let i=0; i<this.length; i++ ){
+        if(this[i]) newArray.push(this[i])
+    }
+    return newArray;
+}  
+
+console.log(myArray.cut(2,4))
+
+        </script>
+          
+</body>
+</html>
